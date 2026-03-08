@@ -2,9 +2,11 @@ use std::fs;
 use std::io::prelude::*;
 use std::net::TcpListener;
 
+use rs_pen::renderer::render;
+
 fn main() -> std::io::Result<()> {
     let markdown = fs::read_to_string("sample.md")?;
-    let html = markdown;
+    let html = render(&markdown);
 
     let listener = TcpListener::bind("127.0.0.1:3000")?;
 
