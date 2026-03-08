@@ -1,8 +1,9 @@
+use std::fs;
 use std::io::prelude::*;
 use std::net::TcpListener;
 
 fn main() -> std::io::Result<()> {
-    let markdown = "Hello";
+    let markdown = fs::read_to_string("sample.md")?;
     let html = markdown;
 
     let listener = TcpListener::bind("127.0.0.1:3000")?;
