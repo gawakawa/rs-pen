@@ -4,7 +4,7 @@ _: {
     {
       apps.default = {
         type = "app";
-        program = "${my-crate}/bin/quick-start";
+        program = "${my-crate}/bin/rs-pen";
       };
     };
 }
